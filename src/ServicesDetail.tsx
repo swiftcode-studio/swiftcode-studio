@@ -61,25 +61,25 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
             <h1 className="text-2xl font-bold text-gray-900">Swiftcode Studio</h1>
           </Link>
           <nav className="hidden md:flex space-x-8">
-            <Link to={isJapanese ? "/ja#about" : "/#about"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
               {isJapanese ? "会社概要" : "About"}
             </Link>
-            <Link to={isJapanese ? "/ja#services" : "/#services"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
               {isJapanese ? "サービス" : "Services"}
             </Link>
-            <Link to={isJapanese ? "/ja#projects" : "/#projects"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
               {isJapanese ? "プロジェクト" : "Projects"}
             </Link>
-            <Link to={isJapanese ? "/ja#contact" : "/#contact"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
               {isJapanese ? "お問い合わせ" : "Contact"}
             </Link>
             <Link to={isJapanese ? "/" : "/ja"} className="text-gray-600 hover:text-blue-600 transition-colors">
               {isJapanese ? "English" : "日本語"}
             </Link>
           </nav>
-          <Link to={isJapanese ? "/ja#contact" : "/#contact"} className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-            {isJapanese ? "お見積もり" : "Get a Quote"}
-          </Link>
+            <Link to={isJapanese ? "/ja" : "/"} className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              {isJapanese ? "お見積もり" : "Get a Quote"}
+            </Link>
         </div>
       </header>
 
@@ -179,8 +179,8 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
             <p className="text-xl mb-8">
               {t('pricing')}
             </p>
-            <Link 
-              to={isJapanese ? "/ja#contact" : "/#contact"}
+            <Link
+              to={isJapanese ? "/ja" : "/"}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
             >
               {isJapanese ? "お見積もりを依頼" : "Get a Quote"}
@@ -194,19 +194,19 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
             {isJapanese ? "プロジェクトを始めましょう" : "Ready to Start Your Project?"}
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            {isJapanese 
+            {isJapanese
               ? "Instagram自動化ソリューションの開発についてご相談ください。無料でお見積もりをお送りします。"
               : "Let's discuss your Instagram automation needs. We'll provide a free quote tailored to your requirements."
             }
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to={isJapanese ? "/ja#contact" : "/#contact"}
+            <Link
+              to={isJapanese ? "/ja" : "/"}
               className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               {isJapanese ? "お問い合わせ" : "Contact Us"}
             </Link>
-            <Link 
+            <Link
               to={isJapanese ? "/ja" : "/"}
               className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors"
             >
@@ -231,7 +231,7 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
                 Code fast. Ship smart. Grow together.
               </p>
               <p className="text-gray-400 text-sm">
-                {isJapanese 
+                {isJapanese
                   ? "Instagram自動化とソーシャルメディアソリューションを専門"
                   : "Specializing in Instagram automation and social media solutions"
                 }

@@ -1,3 +1,4 @@
+import React from 'react'
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import ServicesDetail from './ServicesDetail'
 import { servicesData } from './servicesData'
@@ -7,26 +8,26 @@ function EnglishApp() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      <header className="bg-white shadow-sm sticky top-0 z-50 w-full">
         <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/logo.svg" alt="Swiftcode Studio" className="h-10" />
+            <img src="./logo.svg" alt="Swiftcode Studio" className="h-10" />
           </div>
           <nav className="hidden md:flex space-x-8">
-            <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-            <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
-            <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
-            <a href="/ja" className="text-gray-600 hover:text-blue-600 transition-colors">日本語</a>
+            <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About</a>
+            <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }}>Services</a>
+            <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}>Projects</a>
+            <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
+            {/* <a href="/ja" className="text-gray-600 hover:text-blue-600 transition-colors">日本語</a> */}
           </nav>
-          <a href="#contact" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+          <a href="#contact" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
             Get a Quote
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 w-full">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -38,7 +39,7 @@ function EnglishApp() {
                 AI integration, and full-stack solutions for startups and creative teams.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors text-center">
+                <a href="#contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors text-center" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
                   Get a Free Quote
                 </a>
                 <a href="https://www.chatwork.com/freelancer88" target="_blank" rel="noopener noreferrer" className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors text-center">
@@ -109,14 +110,14 @@ function EnglishApp() {
         </section>
 
         {/* Services */}
-        <section id="services" className="py-20 bg-gray-50">
-          <div className="text-center mb-16">
+        <section id="services" className="py-20 bg-gray-50 w-full">
+          <div className="text-center mb-16 max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive Instagram and social media solutions for modern businesses
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">📱</span>
@@ -219,14 +220,14 @@ function EnglishApp() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-20 bg-gray-50">
-          <div className="text-center mb-16">
+        <section className="py-20 bg-gray-50 w-full">
+          <div className="text-center mb-16 max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               What sets us apart in the competitive world of software development
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">✅</span>
@@ -363,7 +364,7 @@ function EnglishApp() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12 w-full">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -413,10 +414,10 @@ function JapaneseApp() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      <header className="bg-white shadow-sm sticky top-0 z-50 w-full">
         <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/logo.svg" alt="Swiftcode Studio" className="h-10" />
+            <img src="./logo.svg" alt="Swiftcode Studio" className="h-10" />
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">会社概要</a>
@@ -432,7 +433,7 @@ function JapaneseApp() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 w-full">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -515,14 +516,14 @@ function JapaneseApp() {
         </section>
 
         {/* Services */}
-        <section id="services" className="py-20 bg-gray-50">
-          <div className="text-center mb-16">
+        <section id="services" className="py-20 bg-gray-50 w-full">
+          <div className="text-center mb-16 max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">サービス</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               現代ビジネス向けの包括的なInstagram・ソーシャルメディアソリューション
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">📱</span>
@@ -625,14 +626,14 @@ function JapaneseApp() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-20 bg-gray-50">
-          <div className="text-center mb-16">
+        <section className="py-20 bg-gray-50 w-full">
+          <div className="text-center mb-16 max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">選ばれる理由</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               競争の激しいソフトウェア開発の世界で私たちを際立たせるもの
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">✅</span>
@@ -769,7 +770,7 @@ function JapaneseApp() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12 w-full">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -816,11 +817,19 @@ function JapaneseApp() {
 
 // Main App Component with Routing
 export default function App() {
+  // Handle direct URL access to /ja
+  React.useEffect(() => {
+    if (window.location.pathname === '/ja') {
+      window.location.replace('/#/ja');
+    }
+  }, []);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<EnglishApp />} />
         <Route path="/ja" element={<JapaneseApp />} />
+        <Route path="*" element={<EnglishApp />} />
 
         {/* English Service Detail Pages */}
         <Route path="/services/instagram-management" element={<ServicesDetail service={servicesData['instagram-management']} />} />

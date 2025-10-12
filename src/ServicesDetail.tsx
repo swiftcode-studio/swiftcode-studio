@@ -55,39 +55,41 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
           <Link to={isJapanese ? "/ja" : "/"} className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
+            <img src="/logo-new.svg" alt="Swiftcode Studio" className="h-10" />
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">Swiftcode</h1>
+              <p className="text-sm text-gray-600">Studio</p>
+              <p className="text-xs text-gray-500">Code • Ship • Grow</p>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">Swiftcode Studio</h1>
           </Link>
           <nav className="hidden md:flex space-x-8">
-            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-orange-600 transition-colors">
               {isJapanese ? "会社概要" : "About"}
             </Link>
-            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-orange-600 transition-colors">
               {isJapanese ? "サービス" : "Services"}
             </Link>
-            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-orange-600 transition-colors">
               {isJapanese ? "プロジェクト" : "Projects"}
             </Link>
-            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="text-gray-600 hover:text-orange-600 transition-colors">
               {isJapanese ? "お問い合わせ" : "Contact"}
             </Link>
-            <Link to={isJapanese ? "/" : "/ja"} className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link to={isJapanese ? "/" : "/ja"} className="text-gray-600 hover:text-orange-600 transition-colors">
               {isJapanese ? "English" : "日本語"}
             </Link>
           </nav>
-            <Link to={isJapanese ? "/ja" : "/"} className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <Link to={isJapanese ? "/ja" : "/"} className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors">
               {isJapanese ? "お見積もり" : "Get a Quote"}
             </Link>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+      <section className="bg-gradient-to-br from-yellow-50 to-orange-50 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
-            <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+            <div className="w-20 h-20 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
               <span className="text-4xl">{service.icon}</span>
             </div>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
@@ -110,8 +112,8 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
             {features.map((feature, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
                 <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-blue-600 font-bold">✓</span>
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-orange-600 font-bold">✓</span>
                   </div>
                   <p className="text-gray-700">{feature}</p>
                 </div>
@@ -142,7 +144,7 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
           <div className="space-y-6">
             {process.map((step, index) => (
               <div key={index} className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
                   {index + 1}
                 </div>
                 <div className="pt-2">
@@ -161,8 +163,8 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
           <div className="grid md:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-green-600 font-bold text-sm">✓</span>
+                <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-yellow-600 font-bold text-sm">✓</span>
                 </div>
                 <p className="text-gray-700">{benefit}</p>
               </div>
@@ -172,7 +174,7 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
 
         {/* Pricing */}
         <section className="mb-20">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white text-center">
+          <div className="bg-gradient-to-r from-orange-600 to-yellow-600 rounded-2xl p-12 text-white text-center">
             <h2 className="text-3xl font-bold mb-6">
               {isJapanese ? "料金プラン" : "Pricing"}
             </h2>
@@ -181,7 +183,7 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
             </p>
             <Link
               to={isJapanese ? "/ja" : "/"}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
+              className="bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
             >
               {isJapanese ? "お見積もりを依頼" : "Get a Quote"}
             </Link>
@@ -202,13 +204,13 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to={isJapanese ? "/ja" : "/"}
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-colors"
             >
               {isJapanese ? "お問い合わせ" : "Contact Us"}
             </Link>
             <Link
               to={isJapanese ? "/ja" : "/"}
-              className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors"
+              className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors"
             >
               {isJapanese ? "ホームに戻る" : "Back to Home"}
             </Link>
@@ -222,10 +224,12 @@ export default function ServicesDetail({ service, isJapanese = false }: ServiceD
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
+                <img src="/logo-new.svg" alt="Swiftcode Studio" className="h-10" />
+                <div>
+                  <h3 className="text-xl font-bold text-white">Swiftcode</h3>
+                  <p className="text-sm text-gray-400">Studio</p>
+                  <p className="text-xs text-gray-500">Code • Ship • Grow</p>
                 </div>
-                <h3 className="text-xl font-bold">Swiftcode Studio</h3>
               </div>
               <p className="text-gray-400 mb-4">
                 Code fast. Ship smart. Grow together.

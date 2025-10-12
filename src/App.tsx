@@ -1,5 +1,4 @@
-import React from 'react'
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import ServicesDetail from './ServicesDetail'
 import { servicesData } from './servicesData'
 
@@ -10,24 +9,29 @@ function EnglishApp() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50 w-full">
         <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
-          <div className="flex items-center">
-            <img src="./logo.svg" alt="Swiftcode Studio" className="h-10" />
+          <div className="flex items-center space-x-3">
+            <img src="./logo-new.svg" alt="Swiftcode Studio" className="h-10" />
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">Swiftcode</h1>
+              <p className="text-sm text-gray-600">Studio</p>
+              <p className="text-xs text-gray-500">Code • Ship • Grow</p>
+            </div>
           </div>
           <nav className="hidden md:flex space-x-8">
-            <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About</a>
-            <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }}>Services</a>
-            <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}>Projects</a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
-            {/* <a href="/ja" className="text-gray-600 hover:text-blue-600 transition-colors">日本語</a> */}
+            <a href="#about" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('about'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>About</a>
+            <a href="#services" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('services'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>Services</a>
+            <a href="#projects" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('projects'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>Projects</a>
+            <a href="#contact" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('contact'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>Contact</a>
+            <a href="/ja" className="text-gray-600 hover:text-orange-600 transition-colors">日本語</a>
           </nav>
-          <a href="#contact" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
+          <a href="#contact" className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('contact'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>
             Get a Quote
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 w-full">
+      <section className="bg-gradient-to-br from-yellow-50 to-orange-50 py-20 w-full">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -39,10 +43,10 @@ function EnglishApp() {
                 AI integration, and full-stack solutions for startups and creative teams.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors text-center" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                <a href="#contact" className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-colors text-center" onClick={(e) => { e.preventDefault(); const element = document.getElementById('contact'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>
                   Get a Free Quote
                 </a>
-                <a href="https://www.chatwork.com/freelancer88" target="_blank" rel="noopener noreferrer" className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors text-center">
+                <a href="https://www.chatwork.com/swiftcode-studio" target="_blank" rel="noopener noreferrer" className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors text-center">
                   Let's Discuss Your Project
                 </a>
               </div>
@@ -58,9 +62,9 @@ function EnglishApp() {
                   <div className="bg-gray-100 rounded-lg p-4">
                     <div className="text-sm text-gray-600 mb-2">Instagram Management Dashboard</div>
                     <div className="space-y-2">
-                      <div className="h-2 bg-blue-200 rounded"></div>
-                      <div className="h-2 bg-green-200 rounded w-3/4"></div>
-                      <div className="h-2 bg-purple-200 rounded w-1/2"></div>
+                      <div className="h-2 bg-orange-200 rounded"></div>
+                      <div className="h-2 bg-yellow-200 rounded w-3/4"></div>
+                      <div className="h-2 bg-amber-200 rounded w-1/2"></div>
                     </div>
                   </div>
                 </div>
@@ -83,25 +87,25 @@ function EnglishApp() {
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⚛️</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">React</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚀</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">Ruby on Rails</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🤖</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">AI Integration</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📱</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">Instagram API</h3>
@@ -119,38 +123,38 @@ function EnglishApp() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">📱</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Instagram Management</h3>
               <p className="text-gray-600 mb-6">
                 Meta API integration, auto-reply systems, content scheduling, and post management
               </p>
-              <Link to="/services/instagram-management" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/services/instagram-management" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 View More →
               </Link>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">🤖</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">AI Content Creation</h3>
               <p className="text-gray-600 mb-6">
                 AI-powered post generation, automated responses, and intelligent content workflows
               </p>
-              <Link to="/services/ai-content-creation" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/services/ai-content-creation" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 View More →
               </Link>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">⚙️</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Automation Flow Builder</h3>
               <p className="text-gray-600 mb-6">
                 Visual workflow creation like ManyChat, custom automation packages for Instagram
               </p>
-              <Link to="/services/automation-flow-builder" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/services/automation-flow-builder" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 View More →
               </Link>
             </div>
@@ -162,7 +166,7 @@ function EnglishApp() {
               <p className="text-gray-600 mb-6">
                 Cross-platform posting to Facebook, YouTube, X, TikTok, LinkedIn, and more
               </p>
-              <Link to="/services/multi-platform-posting" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/services/multi-platform-posting" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 View More →
               </Link>
             </div>
@@ -189,16 +193,16 @@ function EnglishApp() {
                   auto-reply systems, and Meta API integration. Reduced manual work by 80%.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Rails</span>
-                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">AI</span>
-                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Meta API</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">React</span>
+                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Rails</span>
+                  <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">AI</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Meta API</span>
                 </div>
-                <div className="text-green-600 font-semibold">✓ Reduced manual work by 80%</div>
+                <div className="text-orange-600 font-semibold">✓ Reduced manual work by 80%</div>
               </div>
             </div>
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-r from-orange-400 to-yellow-500 flex items-center justify-center">
                 <span className="text-white text-6xl">🔄</span>
               </div>
               <div className="p-8">
@@ -208,12 +212,12 @@ function EnglishApp() {
                   to create complex automation flows without coding knowledge.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Rails</span>
-                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">WebSocket</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Rails</span>
+                  <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">WebSocket</span>
                 </div>
-                <div className="text-green-600 font-semibold">✓ 40% faster workflow creation</div>
+                <div className="text-orange-600 font-semibold">✓ 40% faster workflow creation</div>
               </div>
             </div>
           </div>
@@ -229,21 +233,21 @@ function EnglishApp() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">✅</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Full-Stack Expertise</h3>
               <p className="text-gray-600">React, TypeScript, Ruby on Rails, Python - complete development stack</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">⚡</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Fast Iteration</h3>
               <p className="text-gray-600">Rapid prototyping and agile development methodology</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🌏</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Bilingual Support</h3>
@@ -257,14 +261,14 @@ function EnglishApp() {
               <p className="text-gray-600">Clear, upfront pricing with no hidden costs</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🔧</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Modern Stack</h3>
               <p className="text-gray-600">Latest technologies and clean, maintainable code</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🛠️</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Maintenance & Support</h3>
@@ -309,47 +313,47 @@ function EnglishApp() {
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
-                <button className="w-full bg-blue-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">
+                <button className="w-full bg-orange-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-colors">
                   Send Message
                 </button>
               </form>
             </div>
             <div className="space-y-8">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-r from-orange-600 to-yellow-600 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
                 <p className="text-lg mb-6">
                   Let's discuss how we can help you automate your Instagram presence
                   and scale your social media operations.
                 </p>
-                <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                   Schedule a Call
                 </button>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">📧</span>
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <a href="mailto:sales@swiftcode-studio.com" className="text-blue-600 hover:underline">
+                    <a href="mailto:sales@swiftcode-studio.com" className="text-orange-600 hover:underline">
                       sales@swiftcode-studio.com
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">💬</span>
                   </div>
                   <div>
                     <p className="font-semibold">Chatwork</p>
-                    <a href="https://www.chatwork.com/freelancer88" className="text-blue-600 hover:underline">
-                      freelancer88
+                    <a href="https://www.chatwork.com/swiftcode-studio" className="text-orange-600 hover:underline">
+                      swiftcode-studio
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">🌐</span>
                   </div>
                   <div>
@@ -369,10 +373,12 @@ function EnglishApp() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
+                <img src="./logo-new.svg" alt="Swiftcode Studio" className="h-10" />
+                <div>
+                  <h3 className="text-xl font-bold text-white">Swiftcode</h3>
+                  <p className="text-sm text-gray-400">Studio</p>
+                  <p className="text-xs text-gray-500">Code • Ship • Grow</p>
                 </div>
-                <h3 className="text-xl font-bold">Swiftcode Studio</h3>
               </div>
               <p className="text-gray-400 mb-4">
                 Code fast. Ship smart. Grow together.
@@ -416,24 +422,29 @@ function JapaneseApp() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50 w-full">
         <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
-          <div className="flex items-center">
-            <img src="./logo.svg" alt="Swiftcode Studio" className="h-10" />
+          <div className="flex items-center space-x-3">
+            <img src="./logo-new.svg" alt="Swiftcode Studio" className="h-10" />
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">Swiftcode</h1>
+              <p className="text-sm text-gray-600">Studio</p>
+              <p className="text-xs text-gray-500">Code • Ship • Grow</p>
+            </div>
           </div>
           <nav className="hidden md:flex space-x-8">
-            <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">会社概要</a>
-            <a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors">サービス</a>
-            <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors">プロジェクト</a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">お問い合わせ</a>
-            <a href="/" className="text-gray-600 hover:text-blue-600 transition-colors">English</a>
+            <a href="#about" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('about'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>会社概要</a>
+            <a href="#services" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('services'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>サービス</a>
+            <a href="#projects" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('projects'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>プロジェクト</a>
+            <a href="#contact" className="text-gray-600 hover:text-orange-600 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('contact'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>お問い合わせ</a>
+            <a href="/" className="text-gray-600 hover:text-orange-600 transition-colors">English</a>
           </nav>
-          <a href="#contact" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+          <a href="#contact" className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors" onClick={(e) => { e.preventDefault(); const element = document.getElementById('contact'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>
             お見積もり
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20 w-full">
+      <section className="bg-gradient-to-br from-yellow-50 to-orange-50 py-20 w-full">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -445,10 +456,10 @@ function JapaneseApp() {
                 フルスタックソリューションを専門とするソフトウェア開発チームです。
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors text-center">
+                <a href="#contact" className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-colors text-center" onClick={(e) => { e.preventDefault(); const element = document.getElementById('contact'); if (element) { const offsetTop = element.offsetTop - 100; window.scrollTo({ top: offsetTop, behavior: 'smooth' }); } }}>
                   無料お見積もり
                 </a>
-                <a href="https://www.chatwork.com/freelancer88" target="_blank" rel="noopener noreferrer" className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors text-center">
+                <a href="https://www.chatwork.com/swiftcode-studio" target="_blank" rel="noopener noreferrer" className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors text-center">
                   プロジェクト相談
                 </a>
               </div>
@@ -464,9 +475,9 @@ function JapaneseApp() {
                   <div className="bg-gray-100 rounded-lg p-4">
                     <div className="text-sm text-gray-600 mb-2">Instagram管理ダッシュボード</div>
                     <div className="space-y-2">
-                      <div className="h-2 bg-blue-200 rounded"></div>
-                      <div className="h-2 bg-green-200 rounded w-3/4"></div>
-                      <div className="h-2 bg-purple-200 rounded w-1/2"></div>
+                      <div className="h-2 bg-orange-200 rounded"></div>
+                      <div className="h-2 bg-yellow-200 rounded w-3/4"></div>
+                      <div className="h-2 bg-amber-200 rounded w-1/2"></div>
                     </div>
                   </div>
                 </div>
@@ -489,25 +500,25 @@ function JapaneseApp() {
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⚛️</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">React</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚀</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">Ruby on Rails</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🤖</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">AI統合</h3>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📱</span>
               </div>
               <h3 className="font-semibold text-lg mb-2">Instagram API</h3>
@@ -525,38 +536,38 @@ function JapaneseApp() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">📱</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Instagram管理</h3>
               <p className="text-gray-600 mb-6">
                 Meta API統合、自動返信システム、コンテンツスケジューリング、投稿管理
               </p>
-              <Link to="/ja/services/instagram-management" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/ja/services/instagram-management" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 詳細を見る →
               </Link>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">🤖</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">AIコンテンツ作成</h3>
               <p className="text-gray-600 mb-6">
                 AI駆動の投稿生成、自動返信、インテリジェントコンテンツワークフロー
               </p>
-              <Link to="/ja/services/ai-content-creation" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/ja/services/ai-content-creation" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 詳細を見る →
               </Link>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
                 <span className="text-2xl">⚙️</span>
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">自動化フロービルダー</h3>
               <p className="text-gray-600 mb-6">
                 ManyChatのような視覚的ワークフロー作成、Instagram向けカスタム自動化パッケージ
               </p>
-              <Link to="/ja/services/automation-flow-builder" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/ja/services/automation-flow-builder" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 詳細を見る →
               </Link>
             </div>
@@ -568,7 +579,7 @@ function JapaneseApp() {
               <p className="text-gray-600 mb-6">
                 Facebook、YouTube、X、TikTok、LinkedInなどへのクロスプラットフォーム投稿
               </p>
-              <Link to="/ja/services/multi-platform-posting" className="bg-gray-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              <Link to="/ja/services/multi-platform-posting" className="bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
                 詳細を見る →
               </Link>
             </div>
@@ -595,16 +606,16 @@ function JapaneseApp() {
                   完全なInstagram自動化プラットフォーム。手動作業を80%削減。
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Rails</span>
-                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">AI</span>
-                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Meta API</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">React</span>
+                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Rails</span>
+                  <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">AI</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Meta API</span>
                 </div>
-                <div className="text-green-600 font-semibold">✓ 手動作業を80%削減</div>
+                <div className="text-orange-600 font-semibold">✓ 手動作業を80%削減</div>
               </div>
             </div>
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-r from-orange-400 to-yellow-500 flex items-center justify-center">
                 <span className="text-white text-6xl">🔄</span>
               </div>
               <div className="p-8">
@@ -614,12 +625,12 @@ function JapaneseApp() {
                   コーディング知識なしで複雑な自動化フローを作成可能。
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Rails</span>
-                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">WebSocket</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Rails</span>
+                  <span className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">WebSocket</span>
                 </div>
-                <div className="text-green-600 font-semibold">✓ ワークフロー作成速度40%向上</div>
+                <div className="text-orange-600 font-semibold">✓ ワークフロー作成速度40%向上</div>
               </div>
             </div>
           </div>
@@ -635,21 +646,21 @@ function JapaneseApp() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">✅</span>
               </div>
               <h3 className="text-xl font-bold mb-4">フルスタック専門性</h3>
               <p className="text-gray-600">React、TypeScript、Ruby on Rails、Python - 完全な開発スタック</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">⚡</span>
               </div>
               <h3 className="text-xl font-bold mb-4">高速イテレーション</h3>
               <p className="text-gray-600">迅速なプロトタイピングとアジャイル開発手法</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🌏</span>
               </div>
               <h3 className="text-xl font-bold mb-4">多言語サポート</h3>
@@ -663,14 +674,14 @@ function JapaneseApp() {
               <p className="text-gray-600">隠れたコストのない明確で事前の価格設定</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🔧</span>
               </div>
               <h3 className="text-xl font-bold mb-4">モダンスタック</h3>
               <p className="text-gray-600">最新技術とクリーンで保守可能なコード</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🛠️</span>
               </div>
               <h3 className="text-xl font-bold mb-4">メンテナンス・サポート</h3>
@@ -715,47 +726,47 @@ function JapaneseApp() {
                     placeholder="プロジェクトについて教えてください..."
                   ></textarea>
                 </div>
-                <button className="w-full bg-blue-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">
+                <button className="w-full bg-orange-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-orange-700 transition-colors">
                   メッセージを送信
                 </button>
               </form>
             </div>
             <div className="space-y-8">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-r from-orange-600 to-yellow-600 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">始める準備はできていますか？</h3>
                 <p className="text-lg mb-6">
                   Instagramプレゼンスの自動化とソーシャルメディア運用の拡大を<br />
                   どのようにサポートできるかご相談しましょう。
                 </p>
-                <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                   電話を予約
                 </button>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">📧</span>
                   </div>
                   <div>
                     <p className="font-semibold">メール</p>
-                    <a href="mailto:sales@swiftcode-studio.com" className="text-blue-600 hover:underline">
+                    <a href="mailto:sales@swiftcode-studio.com" className="text-orange-600 hover:underline">
                       sales@swiftcode-studio.com
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">💬</span>
                   </div>
                   <div>
                     <p className="font-semibold">Chatwork</p>
-                    <a href="https://www.chatwork.com/freelancer88" className="text-blue-600 hover:underline">
-                      freelancer88
+                    <a href="https://www.chatwork.com/swiftcode-studio" className="text-orange-600 hover:underline">
+                      swiftcode-studio
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
                     <span className="text-xl">🌐</span>
                   </div>
                   <div>
@@ -775,10 +786,12 @@ function JapaneseApp() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">S</span>
+                <img src="./logo-new.svg" alt="Swiftcode Studio" className="h-10" />
+                <div>
+                  <h3 className="text-xl font-bold text-white">Swiftcode</h3>
+                  <p className="text-sm text-gray-400">Studio</p>
+                  <p className="text-xs text-gray-500">Code • Ship • Grow</p>
                 </div>
-                <h3 className="text-xl font-bold">Swiftcode Studio</h3>
               </div>
               <p className="text-gray-400 mb-4">
                 Code fast. Ship smart. Grow together.
@@ -817,13 +830,6 @@ function JapaneseApp() {
 
 // Main App Component with Routing
 export default function App() {
-  // Handle direct URL access to /ja
-  React.useEffect(() => {
-    if (window.location.pathname === '/ja') {
-      window.location.replace('/#/ja');
-    }
-  }, []);
-
   return (
     <Router>
       <Routes>

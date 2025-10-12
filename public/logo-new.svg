@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Swiftcode Studio Logo">
+  <title>Swiftcode Studio Symbol</title>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EAB308"/> <!-- vàng đất -->
+      <stop offset="100%" stop-color="#F97316"/> <!-- cam -->
+    </linearGradient>
+  </defs>
+  <!-- Vòng chuyển động tượng trưng cho code nhanh và quy trình linh hoạt -->
+  <circle cx="128" cy="128" r="90" fill="none" stroke="url(#grad)" stroke-width="16" stroke-linecap="round" stroke-dasharray="180 180" transform="rotate(-45 128 128)"/>
+  
+  <!-- Biểu tượng code trừu tượng -->
+  <g stroke="#FACC15" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M90 90 L70 128 L90 166" /> <!-- < -->
+    <path d="M166 90 L186 128 L166 166" /> <!-- > -->
+    <path d="M120 90 L136 166" stroke="#FB923C"/> <!-- tia code trung tâm -->
+  </g>
+  
+  <!-- Hiệu ứng năng lượng (điểm sáng code) -->
+  <circle cx="196" cy="86" r="10" fill="#FACC15" opacity="0.9"/>
+</svg>

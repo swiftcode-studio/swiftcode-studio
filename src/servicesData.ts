@@ -27,8 +27,8 @@ export const servicesData = {
       'エンゲージメント率監視'
     ],
     techStack: ['React', 'TypeScript', 'Ruby on Rails', 'Meta API', 'PostgreSQL', 'Redis', 'AWS'],
-    pricing: 'Starting from ¥1,500/hour for development work. Custom enterprise solutions available.',
-    pricingJa: '開発作業は時間あたり¥1,500から。カスタムエンタープライズソリューションも対応可能。',
+    pricing: 'Starting from ¥1,700/hour for development work. Custom enterprise solutions available.',
+    pricingJa: '開発作業は時間あたり¥1,700から。カスタムエンタープライズソリューションも対応可能。',
     process: [
       'Initial consultation and requirement analysis',
       'Meta API setup and Instagram account integration',
@@ -90,8 +90,8 @@ export const servicesData = {
       '盗用検出と独創性スコアリング'
     ],
     techStack: ['Python', 'OpenAI GPT-4', 'DALL-E', 'React', 'Node.js', 'TensorFlow', 'AWS S3'],
-    pricing: 'Starting from ¥1,500/hour for AI content development. Volume discounts available.',
-    pricingJa: 'AIコンテンツ開発は時間あたり¥1,500から。ボリューム割引あり。',
+    pricing: 'Starting from ¥1,700/hour for AI content development. Volume discounts available.',
+    pricingJa: 'AIコンテンツ開発は時間あたり¥1,700から。ボリューム割引あり。',
     process: [
       'Brand analysis and content strategy development',
       'AI model training with your brand data',
@@ -153,8 +153,8 @@ export const servicesData = {
       'リアルタイムフローテストとデバッグ'
     ],
     techStack: ['React', 'TypeScript', 'Node.js', 'WebSocket', 'PostgreSQL', 'Redis', 'Docker'],
-    pricing: 'Starting from ¥1,500/hour for automation development. Advanced features available.',
-    pricingJa: '自動化開発は時間あたり¥1,500から。高度な機能も利用可能。',
+    pricing: 'Starting from ¥1,700/hour for automation development. Advanced features available.',
+    pricingJa: '自動化開発は時間あたり¥1,700から。高度な機能も利用可能。',
     process: [
       'Workflow mapping and strategy planning',
       'Visual flow design and logic implementation',
@@ -216,8 +216,8 @@ export const servicesData = {
       'エンゲージメント追跡とレポート'
     ],
     techStack: ['React', 'Node.js', 'Python', 'Social Media APIs', 'AWS', 'MongoDB', 'Redis'],
-    pricing: 'Starting from ¥1,500/hour for multi-platform development. Additional platforms available.',
-    pricingJa: 'マルチプラットフォーム開発は時間あたり¥1,500から。追加プラットフォームも利用可能。',
+    pricing: 'Starting from ¥1,700/hour for multi-platform development. Additional platforms available.',
+    pricingJa: 'マルチプラットフォーム開発は時間あたり¥1,700から。追加プラットフォームも利用可能。',
     process: [
       'Platform analysis and integration setup',
       'Content optimization strategy development',

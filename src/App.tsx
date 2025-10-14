@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import ServicesDetail from './ServicesDetail'
 import { servicesData } from './servicesData'
+import InstagramProductPage from './pages/InstagramProductPage'
+import InstagramProductPageJa from './pages/InstagramProductPageJa.tsx'
 
 // English Component
 function EnglishApp() {
@@ -49,6 +51,9 @@ function EnglishApp() {
                 <a href="https://www.chatwork.com/swiftcode-studio" target="_blank" rel="noopener noreferrer" className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors text-center">
                   Let's Discuss Your Project
                 </a>
+                <Link to="/product/instagram" className="border-2 border-gray-200 text-gray-800 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors text-center">
+                  Instagram Automation
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -462,6 +467,9 @@ function JapaneseApp() {
                 <a href="https://www.chatwork.com/swiftcode-studio" target="_blank" rel="noopener noreferrer" className="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors text-center">
                   プロジェクト相談
                 </a>
+                <Link to="/ja/product/instagram" className="border-2 border-gray-200 text-gray-800 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors text-center">
+                  インスタ自動返信
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -835,6 +843,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<EnglishApp />} />
         <Route path="/ja" element={<JapaneseApp />} />
+        <Route path="/product/instagram" element={<InstagramProductPage />} />
+        <Route path="/ja/product/instagram" element={<InstagramProductPageJa />} />
         <Route path="*" element={<EnglishApp />} />
 
         {/* English Service Detail Pages */}

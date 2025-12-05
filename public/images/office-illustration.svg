@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#F5F8FA"/>
+  
+  <!-- Building -->
+  <rect x="150" y="100" width="300" height="250" fill="#fff" stroke="#333" stroke-width="2"/>
+  
+  <!-- Windows -->
+  <rect x="180" y="130" width="60" height="50" fill="#19857B" opacity="0.3"/>
+  <rect x="270" y="130" width="60" height="50" fill="#FF6B35" opacity="0.3"/>
+  <rect x="360" y="130" width="60" height="50" fill="#19857B" opacity="0.3"/>
+  
+  <rect x="180" y="210" width="60" height="50" fill="#FF6B35" opacity="0.3"/>
+  <rect x="270" y="210" width="60" height="50" fill="#19857B" opacity="0.3"/>
+  <rect x="360" y="210" width="60" height="50" fill="#FF6B35" opacity="0.3"/>
+  
+  <rect x="180" y="290" width="60" height="50" fill="#19857B" opacity="0.3"/>
+  <rect x="360" y="290" width="60" height="50" fill="#19857B" opacity="0.3"/>
+  
+  <!-- Door -->
+  <rect x="270" y="290" width="60" height="60" rx="5" fill="#333"/>
+  
+  <!-- Logo/Sign -->
+  <text x="300" y="70" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FF6B35" text-anchor="middle">Swiftcode Studio</text>
+  
+  <!-- Ground -->
+  <rect x="0" y="350" width="600" height="50" fill="#E8E8E8"/>
+  
+  <!-- Trees -->
+  <circle cx="80" cy="320" r="30" fill="#19857B" opacity="0.3"/>
+  <rect x="75" y="320" width="10" height="30" fill="#8B4513"/>
+  
+  <circle cx="520" cy="320" r="30" fill="#19857B" opacity="0.3"/>
+  <rect x="515" y="320" width="10" height="30" fill="#8B4513"/>
+</svg>
+

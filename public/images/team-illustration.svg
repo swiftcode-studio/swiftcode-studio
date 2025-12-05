@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F5F8FA"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="60" fill="#FF6B35" opacity="0.1"/>
+  <circle cx="700" cy="500" r="80" fill="#19857B" opacity="0.1"/>
+  
+  <!-- Team members -->
+  <!-- Person 1 -->
+  <circle cx="200" cy="250" r="50" fill="#FF6B35"/>
+  <rect x="175" y="310" width="50" height="80" rx="25" fill="#19857B"/>
+  
+  <!-- Person 2 -->
+  <circle cx="400" cy="230" r="55" fill="#19857B"/>
+  <rect x="372" y="295" width="56" height="90" rx="28" fill="#FF6B35"/>
+  
+  <!-- Person 3 -->
+  <circle cx="600" cy="250" r="50" fill="#FF6B35"/>
+  <rect x="575" y="310" width="50" height="80" rx="25" fill="#19857B"/>
+  
+  <!-- Laptop illustration -->
+  <rect x="300" y="400" width="200" height="120" rx="10" fill="#333"/>
+  <rect x="310" y="410" width="180" height="90" fill="#fff"/>
+  <rect x="350" y="520" width="100" height="10" rx="5" fill="#333"/>
+  
+  <!-- Code brackets on laptop screen -->
+  <text x="330" y="450" font-family="monospace" font-size="24" fill="#FF6B35">&lt;/&gt;</text>
+  <text x="430" y="450" font-family="monospace" font-size="24" fill="#19857B">{}</text>
+</svg>
+

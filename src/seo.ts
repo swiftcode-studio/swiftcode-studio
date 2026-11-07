@@ -29,6 +29,7 @@ function studio(lang: Lang): object {
     url: SITE_URL + LANG_PATH[lang],
     description: d.meta.description,
     image: `${SITE_URL}/og.png`,
+    logo: `${SITE_URL}/logo-512.png`,
     email: COMPANY.email,
     telephone: '+84-35-543-0828',
     foundingDate: String(COMPANY.founded),

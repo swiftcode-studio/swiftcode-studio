@@ -57,7 +57,10 @@ Giai đoạn 06 sinh ra `intent.md` mới và quay lại 01: luôn vẽ quy trì
 
 - Hệ thống chưa có bộ icon riêng. Dùng **Lucide** (nét 1.5px, cỡ 16/20/24), tô màu `ink-muted` hoặc `agent`.
 - Ba ký hiệu riêng của hệ thống, vẽ bằng CSS trong component: **chấm tròn** = việc của AI (`agent`), **hình thoi** = cổng duyệt của người (`human-fill`), **dấu `$`** mono = câu lệnh gửi cho AI.
-- Chưa có logo: đặt tên thương hiệu bằng chữ `sans` 700, không vẽ logo giả.
+- **Logo** (`design-system/logo/`): chữ "S" vẽ bằng nét cung màu `agent` (vòng lặp AI), bị ngắt ở giữa bởi hình thoi `human` (cổng duyệt của người). Đi cùng tên "Swiftcode Studio" chữ `sans` 700.
+  - `logo-mark.svg` cho nền tối, `logo-mark-light.svg` cho nền sáng; trên web dùng component `Logo` (màu theo token, tự đổi theo theme).
+  - `favicon.svg` / `logo-512.png`: biểu tượng trên nền `surface` tối, bo `radius` 14/64.
+  - Khoảng trống quanh hình thoi luôn cùng màu nền đang đặt logo. Không đổi màu, không xoay, không thêm hiệu ứng; cỡ tối thiểu 16px.
 
 ## Thành phần
 

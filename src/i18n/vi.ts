@@ -11,6 +11,7 @@ const vi: Dict = {
   skip: 'Bỏ qua, tới nội dung chính',
   nav: {
     process: 'Quy trình',
+    services: 'Dịch vụ',
     manga: 'Video manga',
     work: 'Dự án',
     about: 'Về tôi',
@@ -55,10 +56,11 @@ const vi: Dict = {
       { kind: 'gate', text: 'Chờ bạn duyệt spec.md' },
     ],
     caption: 'Ví dụ minh hoạ một phiên làm việc.',
-    pathsLabel: 'HAI DỊCH VỤ',
+    pathsLabel: 'BA DỊCH VỤ',
     paths: [
-      { title: 'Phát triển phần mềm', body: 'Dịch vụ web, SaaS, API và hệ thống đang chạy. Sáu giai đoạn với cổng duyệt rõ ràng.', href: '#process' },
-      { title: 'Dựng video manga bằng AI', body: 'Video tiếng Anh trọn tập từ tài liệu manga. Bắt đầu bằng khoảng 10 phút làm thử.', href: '#manga' },
+      { title: 'Phát triển phần mềm', body: 'Dịch vụ web, SaaS, API và hệ thống đang chạy.', href: '#work-dev' },
+      { title: 'Tự động hoá và công cụ', body: 'Tự động hoá việc cộng tay, xử lý video.', href: '#work-auto' },
+      { title: 'Dựng video manga bằng AI', body: 'Video tiếng Anh trọn tập từ tài liệu manga.', href: '#manga' },
     ],
   },
   process: {
@@ -357,15 +359,12 @@ kiểm tra     13/13 mục tự động: đạt
   },
   services: {
     eyebrow: 'TÔI XÂY GÌ',
-    title: 'Cùng một quy trình, nhiều loại sản phẩm',
-    lead: 'Quy trình AI-native áp dụng cho dự án mới, hệ thống đang chạy, và cả dựng video.',
-    items: [
-      { title: 'SaaS và ứng dụng web', body: 'Từ bản mẫu đến sản phẩm có người dùng trả tiền, kèm trang quản trị và thanh toán.' },
-      { title: 'API và tích hợp', body: 'Kết nối CRM, thanh toán, mạng xã hội, hệ thống nội bộ. Tài liệu API viết cùng code.' },
-      { title: 'Ứng dụng di động', body: 'iOS, Android, Flutter, React Native — dùng chung một đặc tả với bản web.' },
-      { title: 'Tính năng AI trong sản phẩm', body: 'Trợ lý, tự động hoá, phân tích nội dung — có bộ đo chất lượng trước khi ra mắt.' },
-      { title: 'Hệ thống cũ và bảo trì', body: 'AI đọc mã nguồn, bổ sung tài liệu và kiểm thử trước khi sửa. Giám sát, vá lỗi theo vòng lặp giai đoạn 06.' },
-      { title: 'Video manga bằng AI', body: 'Dựng video đủ tập từ tranh, kịch bản và giọng đọc: bong bóng thoại, góc máy, nhạc nền.', href: '#manga' },
+    title: 'Ba dịch vụ',
+    lead: 'Việc tôi nhận chia thành ba nhóm. Cả ba cùng một quy trình: AI làm, người duyệt.',
+    groups: [
+      { id: 'dev', title: 'Phát triển phần mềm', body: 'Dịch vụ web, SaaS, API và cải thiện hệ thống đang chạy. Sáu giai đoạn với cổng duyệt rõ ràng.', bullets: ['SaaS và ứng dụng web', 'API và tích hợp', 'Ứng dụng di động', 'Tính năng AI trong sản phẩm', 'Hệ thống cũ, bảo trì và đánh giá kỹ thuật'], href: '#work-dev' },
+      { id: 'auto', title: 'Tự động hoá và công cụ xử lý video/dữ liệu', body: 'Thay việc cộng tay, xử lý video thủ công bằng script và công cụ nhỏ.', bullets: ['Tự động hoá bảng tính và LINE (Google Apps Script)', 'Xử lý video tự động (FFmpeg, OBS)', 'Công cụ sản xuất dùng AI'], href: '#work-auto' },
+      { id: 'manga', title: 'Dựng video manga bằng AI', body: 'Video tiếng Anh trọn tập từ tài liệu manga. Bắt đầu bằng khoảng 10 phút làm thử.', bullets: ['Làm lại bong bóng thoại và khung dẫn chuyện', 'Phóng to, lia và nhiều góc máy', 'Nhạc nền, đoạn mở đầu, cảnh kết'], href: '#manga' },
     ],
     stackLabel: 'Công nghệ thường dùng',
     more: 'Xem chi tiết',
@@ -383,9 +382,11 @@ kiểm tra     13/13 mục tự động: đạt
     logoAlt: 'logo',
     note: 'Muốn xem demo hoặc trao đổi kỹ hơn về một dự án? Hỏi tôi trong form liên hệ.',
     aiLabel: 'AI giúp gì',
+    groupTitles: { dev: 'Sản phẩm và phát triển hệ thống', auto: 'Tự động hoá và công cụ xử lý video/dữ liệu', manga: 'Video manga' },
     casesTitle: 'Dự án khác',
     cases: [
       {
+        group: 'auto',
         kind: 'Xử lý video · AI chạy tại máy',
         title: 'Công cụ tự động làm mờ video',
         body: 'Tự phát hiện và làm mờ khuôn mặt không nằm trong danh sách cho phép cùng các vùng nhạy cảm. Kết quả được duyệt và chỉnh lại ngay trên trình duyệt, xuất ra video đã làm mờ hoặc lớp phủ trong suốt cho Premiere Pro. Mọi xử lý chạy trên máy Mac của khách, video không rời khỏi máy.',
@@ -395,6 +396,7 @@ kiểm tra     13/13 mục tự động: đạt
         flow: ['Nạp video', 'AI phát hiện', 'Duyệt trên trình duyệt', 'Xuất bản đã làm mờ'],
       },
       {
+        group: 'auto',
         kind: 'Tự động hoá nghiệp vụ · Google Apps Script',
         title: 'Thống kê quà tặng TikTok Live và bảng xếp hạng qua LINE',
         body: 'Bấm một nút là dữ liệu quà tặng TikTok Live được nhập vào bảng tính doanh thu. Sheet theo tháng, danh sách người tặng và bảng xếp hạng tự cập nhật; idol và quản lý chỉ cần nhắn bot LINE để xem thứ hạng, mỗi người thấy đúng phần được phân quyền.',
@@ -404,6 +406,7 @@ kiểm tra     13/13 mục tự động: đạt
         tags: ['Google Apps Script', 'LINE Messaging API', 'Google Sheets'],
       },
       {
+        group: 'auto',
         kind: 'Livestream · tự động hoá dựng video',
         title: 'Ghi hình TikTok Live và cắt cảnh nổi bật',
         body: 'Từ buổi TikTok Live được ghi bằng OBS, Python và FFmpeg tự cắt những cảnh nổi bật và xuất thành video ngắn. Không còn phải xem lại cả mấy tiếng livestream từ đầu.',
@@ -413,6 +416,7 @@ kiểm tra     13/13 mục tự động: đạt
         image: { name: 'tiktok-clips', alt: 'Tìm cảnh nổi bật trong bản ghi OBS và xuất thành các clip ngắn', note: 'Ảnh minh hoạ (dữ liệu mẫu)' },
       },
       {
+        group: 'dev',
         kind: 'Công cụ cho lập trình viên · Ruby gem',
         title: 'Error Radar — theo dõi lỗi và bảng công việc cho Rails',
         body: 'Tự thu thập ngoại lệ từ controller, Rack, Sidekiq và ActiveJob trong ứng dụng Rails. Cùng một lỗi lặp lại được gộp thành một việc kèm số lần xảy ra, quản lý trên bảng kanban: chưa xử lý, đang xử lý, đã xử lý.',
@@ -422,6 +426,7 @@ kiểm tra     13/13 mục tự động: đạt
         image: { name: 'error-radar', alt: 'Bảng kanban theo dõi lỗi', note: 'Ảnh minh hoạ (dữ liệu mẫu)' },
       },
       {
+        group: 'dev',
         kind: 'Giám sát hạ tầng · ứng dụng di động',
         title: 'Ops Guardian — ứng dụng giám sát và khôi phục server',
         body: 'Kiểm tra nhiều server AWS mỗi 30 giây, xem CPU, RAM, ổ đĩa và trạng thái Sidekiq trên ứng dụng Android. Có sự cố thì nhận thông báo đẩy, và khởi động lại server ngay từ ứng dụng.',
@@ -431,6 +436,7 @@ kiểm tra     13/13 mục tự động: đạt
         image: { name: 'ops-guardian', alt: 'Màn hình ứng dụng liệt kê trạng thái server kèm cảnh báo', note: 'Ảnh minh hoạ (dữ liệu mẫu)' },
       },
       {
+        group: 'dev',
         kind: 'Đánh giá kỹ thuật · hệ thống đang chạy',
         title: 'Đánh giá hệ thống để hợp nhất hai sản phẩm SaaS',
         body: 'Đọc mã nguồn và cơ sở dữ liệu của một SaaS đang chạy (Rails API + React), báo cáo kiến trúc, tích hợp bên ngoài, nợ kỹ thuật và rủi ro, giúp quyết định có hợp nhất được không và cần làm gì trước.',
@@ -440,6 +446,7 @@ kiểm tra     13/13 mục tự động: đạt
         image: { name: 'system-audit', alt: 'Báo cáo đánh giá: tóm tắt, kiến trúc, rủi ro, mức sẵn sàng hợp nhất', note: 'Ảnh minh hoạ (nội dung mẫu)' },
       },
       {
+        group: 'auto',
         kind: 'Tự phát triển · làm video bằng AI',
         title: 'Cue Studio — công cụ làm phim ngắn bằng AI',
         body: 'Từ một ý tưởng, AI viết kịch bản và storyboard, rồi công cụ lo keyframe, chuyển động, chọn take và dựng hoàn chỉnh trên một màn hình. Khuôn mặt và trang phục nhân vật giữ nhất quán qua các cảnh.',

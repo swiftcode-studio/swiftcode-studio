@@ -11,6 +11,7 @@ const en: Dict = {
   skip: 'Skip to main content',
   nav: {
     process: 'Process',
+    services: 'Services',
     manga: 'Manga video',
     work: 'Work',
     about: 'About',
@@ -55,10 +56,11 @@ const en: Dict = {
       { kind: 'gate', text: 'Waiting for you to approve spec.md' },
     ],
     caption: 'Illustrative example of a working session.',
-    pathsLabel: 'TWO SERVICES',
+    pathsLabel: 'THREE SERVICES',
     paths: [
-      { title: 'Software development', body: 'Web services, SaaS, APIs and existing systems. Six stages with approval gates.', href: '#process' },
-      { title: 'AI manga video editing', body: 'Full English episodes from manga material. Start with a trial of the first ~10 minutes.', href: '#manga' },
+      { title: 'Software development', body: 'Web services, SaaS, APIs and existing systems.', href: '#work-dev' },
+      { title: 'Automation and tools', body: 'Automate manual tallying and video handling.', href: '#work-auto' },
+      { title: 'AI manga video editing', body: 'Full English episodes from manga material.', href: '#manga' },
     ],
   },
   process: {
@@ -358,15 +360,12 @@ checks     13 of 13 automated checks passed
   },
   services: {
     eyebrow: 'WHAT I BUILD',
-    title: 'One process, many kinds of product',
-    lead: 'The AI-native process works for new builds, for systems already in production, and for video.',
-    items: [
-      { title: 'SaaS and web apps', body: 'From prototype to a product with paying users, including admin and billing.' },
-      { title: 'APIs and integrations', body: 'CRM, payments, social platforms, internal systems. API docs written alongside the code.' },
-      { title: 'Mobile apps', body: 'iOS, Android, Flutter, React Native — sharing one spec with the web app.' },
-      { title: 'AI features in your product', body: 'Assistants, automation, content analysis — with quality checks in place before launch.' },
-      { title: 'Legacy systems and maintenance', body: 'AI reads the codebase and adds docs and tests before changing anything. Monitoring and fixes run through the stage 06 loop.' },
-      { title: 'AI manga video', body: 'Full episodes edited from art, script and voice tracks: speech bubbles, camera moves, music.', href: '#manga' },
+    title: 'Three services',
+    lead: 'What I take on falls into three kinds. All of them follow the same process: AI does the work, people approve.',
+    groups: [
+      { id: 'dev', title: 'Software development', body: 'Web services, SaaS, APIs and improving existing systems. Six stages with approval gates.', bullets: ['SaaS and web apps', 'APIs and integrations', 'Mobile apps', 'AI features in your product', 'Legacy systems, maintenance and technical audits'], href: '#work-dev' },
+      { id: 'auto', title: 'Automation and video/data tools', body: 'Replace manual tallying and video handling with scripts and small tools.', bullets: ['Spreadsheet and LINE workflow automation (Google Apps Script)', 'Automatic video processing (FFmpeg, OBS)', 'AI-powered production tools'], href: '#work-auto' },
+      { id: 'manga', title: 'AI manga video editing', body: 'Full English episodes from manga material. Start with a trial of the first ~10 minutes.', bullets: ['Speech bubbles and narration boxes rebuilt', 'Zoom, pan and several cuts', 'Music, opening teaser and ending scene'], href: '#manga' },
     ],
     stackLabel: 'Technologies I use',
     more: 'Learn more',
@@ -384,9 +383,11 @@ checks     13 of 13 automated checks passed
     logoAlt: 'logo',
     note: 'Want a demo or more detail on a project? Ask me in the contact form.',
     aiLabel: 'How AI helps',
+    groupTitles: { dev: 'Products and system development', auto: 'Automation and video/data tools', manga: 'Manga video' },
     casesTitle: 'Other client work',
     cases: [
       {
+        group: 'auto',
         kind: 'Video processing · on-device AI',
         title: 'Automatic video mosaic tool',
         body: 'Detects faces that are not on an allow-list, and sensitive regions, then mosaics them. Detections are reviewed and corrected in the browser, and the result exports as a censored video or as a transparent overlay for Premiere Pro. Everything runs on the client\'s Mac; no footage leaves it.',
@@ -396,6 +397,7 @@ checks     13 of 13 automated checks passed
         flow: ['Load the video', 'AI detects', 'Review in the browser', 'Export censored'],
       },
       {
+        group: 'auto',
         kind: 'Workflow automation · Google Apps Script',
         title: 'TikTok Live gift tracking with LINE rankings',
         body: 'Imports TikTok Live gift data into the sales spreadsheet with one button. Monthly sheets, a gifter list and rankings update automatically, and talents or managers check their ranking just by messaging a LINE bot, with what each person sees controlled by role.',
@@ -405,6 +407,7 @@ checks     13 of 13 automated checks passed
         tags: ['Google Apps Script', 'LINE Messaging API', 'Google Sheets'],
       },
       {
+        group: 'auto',
         kind: 'Streaming · video editing automation',
         title: 'TikTok Live recording and highlight clips',
         body: 'From TikTok Live streams recorded in OBS, Python and FFmpeg cut out the highlights automatically and export them as short videos. No more re-watching hours of stream from the start.',
@@ -414,6 +417,7 @@ checks     13 of 13 automated checks passed
         image: { name: 'tiktok-clips', alt: 'Highlights found in an OBS recording and exported as short clips', note: 'Illustration (sample data)' },
       },
       {
+        group: 'dev',
         kind: 'Developer tool · Ruby gem',
         title: 'Error Radar — error tracking and task board for Rails',
         body: 'Captures exceptions from controllers, Rack, Sidekiq and ActiveJob in Rails apps. Repeats of the same failure collapse into one task with an occurrence count, triaged on a kanban dashboard: open, in progress, resolved.',
@@ -423,6 +427,7 @@ checks     13 of 13 automated checks passed
         image: { name: 'error-radar', alt: 'A kanban dashboard for tracking errors', note: 'Illustration (sample data)' },
       },
       {
+        group: 'dev',
         kind: 'Infrastructure monitoring · mobile app',
         title: 'Ops Guardian — server monitoring and recovery app',
         body: 'Checks several AWS servers every 30 seconds and shows CPU, memory, disk and Sidekiq status in an Android app. Problems trigger a push notification, and a server can be restarted from the app.',
@@ -432,6 +437,7 @@ checks     13 of 13 automated checks passed
         image: { name: 'ops-guardian', alt: 'An app screen listing server status with an alert', note: 'Illustration (sample data)' },
       },
       {
+        group: 'dev',
         kind: 'Technical audit · existing systems',
         title: 'System audit for merging two SaaS products',
         body: 'Read the code and database of a live SaaS (Rails API + React) and reported on architecture, integrations, technical debt and risks, in a form that supports the decision to merge and lists what must be done first.',
@@ -441,6 +447,7 @@ checks     13 of 13 automated checks passed
         image: { name: 'system-audit', alt: 'An audit report: summary, architecture, risks and merge readiness', note: 'Illustration (sample content)' },
       },
       {
+        group: 'auto',
         kind: 'In-house · AI video production',
         title: 'Cue Studio — a tool for making short films with AI',
         body: 'From an idea, AI writes the script and storyboard, then the tool handles keyframes, motion, choosing takes and the final edit in one place. Faces and outfits stay consistent across shots.',

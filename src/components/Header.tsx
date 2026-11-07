@@ -22,7 +22,7 @@ export function Header() {
 
   const links = [
     [sectionHref(page, d.lang, 'process'), d.nav.process],
-    [page === 'manga' ? '#manga' : PAGE_PATH.manga[d.lang], d.nav.manga],
+    [sectionHref(page, d.lang, 'services'), d.nav.services],
     [sectionHref(page, d.lang, 'work'), d.nav.work],
     [sectionHref(page, d.lang, 'about'), d.nav.about],
     [sectionHref(page, d.lang, 'engage'), d.nav.engage],

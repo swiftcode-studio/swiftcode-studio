@@ -1,6 +1,7 @@
 import type { Owner, TerminalLine } from '../ds'
 
 export type Lang = 'vi' | 'en' | 'ja'
+export type GroupId = 'dev' | 'auto' | 'manga'
 export type StageCode = 'PLAN' | 'DESIGN' | 'BUILD' | 'TEST' | 'DEPLOY' | 'MAINTAIN'
 
 /**
@@ -32,6 +33,7 @@ export interface Dict {
   skip: string
   nav: {
     process: string
+    services: string
     manga: string
     work: string
     about: string
@@ -163,7 +165,7 @@ export interface Dict {
     sourceLink: string
   }
   principles: { eyebrow: string; title: string; items: { title: string; body: string }[] }
-  services: { eyebrow: string; title: string; lead: string; items: { title: string; body: string; href?: string }[]; stackLabel: string; more: string }
+  services: { eyebrow: string; title: string; lead: string; groups: { id: GroupId; title: string; body: string; bullets: string[]; href: string }[]; stackLabel: string; more: string }
   work: {
     eyebrow: string
     title: string
@@ -174,9 +176,11 @@ export interface Dict {
     visit: string
     logoAlt: string
     note: string
+    groupTitles: Record<GroupId, string>
     casesTitle: string
     /** Client work shown without names or logos. */
     cases: {
+      group: GroupId
       kind: string
       title: string
       body: string

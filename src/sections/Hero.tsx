@@ -1,4 +1,4 @@
-import { ArrowRight, Clapperboard, Code2 } from 'lucide-react'
+import { ArrowRight, Clapperboard, Code2, Workflow } from 'lucide-react'
 import { Button, Terminal } from '../ds'
 import { useDict } from '../i18n'
 
@@ -36,7 +36,7 @@ export function Hero() {
         <nav className="paths" aria-label={h.pathsLabel}>
           <p className="eyebrow paths__label">{h.pathsLabel}</p>
           {h.paths.map((p, i) => {
-            const Icon = i === 0 ? Code2 : Clapperboard
+            const Icon = [Code2, Workflow, Clapperboard][i]
             return (
               <a key={p.href} className="path" href={p.href}>
                 <Icon className="path__icon" size={24} strokeWidth={1.5} aria-hidden="true" />

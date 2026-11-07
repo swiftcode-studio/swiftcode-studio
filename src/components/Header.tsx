@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import { Button } from '../ds'
-import { Logo } from './Logo'
+import { Brand } from './Logo'
 import { LANG_LABEL, LANG_NAME, LANG_PATH, useDict, type Lang } from '../i18n'
 import { PAGE_PATH, sectionHref, usePage } from '../site'
 import { useTheme } from '../hooks/useTheme'
@@ -33,7 +33,7 @@ export function Header() {
     <header className="hdr">
       <div className="wrap hdr__in">
         <a className="brand" href={page === 'home' ? '#top' : LANG_PATH[d.lang]} aria-label={`Swiftcode Studio — ${d.nav.home}`}>
-          <Logo className="brand__logo" />Swiftcode Studio
+          <Brand />
         </a>
         <nav className="nav" aria-label={d.nav.primaryAria}>
           {links.map(([href, label]) => <a key={href} href={href}>{label}</a>)}

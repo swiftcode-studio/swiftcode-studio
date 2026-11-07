@@ -1,5 +1,5 @@
 import { useDict } from '../i18n'
-import { Logo } from './Logo'
+import { Brand } from './Logo'
 import { COMPANY } from '../i18n/shared'
 import { sectionHref, usePage } from '../site'
 
@@ -12,7 +12,7 @@ export function Footer() {
       <div className="wrap">
         <div className="ftr__grid">
           <div>
-            <a href="#top" className="brand"><Logo className="brand__logo" />Swiftcode Studio</a>
+            <a href="#top" className="brand"><Brand /></a>
             <p className="ftr__tag">{d.footer.tagline}</p>
           </div>
           <div>

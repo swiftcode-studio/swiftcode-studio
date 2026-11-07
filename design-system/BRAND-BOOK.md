@@ -57,10 +57,11 @@ Giai đoạn 06 sinh ra `intent.md` mới và quay lại 01: luôn vẽ quy trì
 
 - Hệ thống chưa có bộ icon riêng. Dùng **Lucide** (nét 1.5px, cỡ 16/20/24), tô màu `ink-muted` hoặc `agent`.
 - Ba ký hiệu riêng của hệ thống, vẽ bằng CSS trong component: **chấm tròn** = việc của AI (`agent`), **hình thoi** = cổng duyệt của người (`human-fill`), **dấu `$`** mono = câu lệnh gửi cho AI.
-- **Logo** (`design-system/logo/`): chữ "S" vẽ bằng nét cung màu `agent` (vòng lặp AI), bị ngắt ở giữa bởi hình thoi `human` (cổng duyệt của người). Đi cùng tên "Swiftcode Studio" chữ `sans` 700.
-  - `logo-mark.svg` cho nền tối, `logo-mark-light.svg` cho nền sáng; trên web dùng component `Logo` (màu theo token, tự đổi theo theme).
-  - `favicon.svg` / `logo-512.png`: biểu tượng trên nền `surface` tối, bo `radius` 14/64.
-  - Khoảng trống quanh hình thoi luôn cùng màu nền đang đặt logo. Không đổi màu, không xoay, không thêm hiệu ứng; cỡ tối thiểu 16px.
+- **Logo** (`design-system/logo/`): chữ "S" dạng dải ruy-băng gấp (vàng → cam) giữa cặp ngoặc code `< >`, kèm chữ "Swift**Code**" (nghiêng, đậm 800; "Code" màu cam) và "STUDIO" giãn chữ có vạch cam hai bên.
+  - `logo.svg` cho nền tối, `logo-light.svg` cho nền sáng, `logo-mark.svg` chỉ biểu tượng, `logo-s.svg` chỉ chữ S; trên web dùng component `Brand` / `Logo`.
+  - `favicon.svg`, `logo-512.png`: chữ S trên nền `surface` tối (bỏ cặp ngoặc vì quá nhỏ ở 16px).
+  - Ngoại lệ duy nhất cho quy tắc "không gradient": dải ruy-băng và chữ "Code" của logo. Phần còn lại của giao diện vẫn dùng màu phẳng.
+  - Không đổi màu, không kéo giãn, không thêm bóng; cỡ tối thiểu: biểu tượng 24px, logo đầy đủ cao 32px.
 
 ## Thành phần
 

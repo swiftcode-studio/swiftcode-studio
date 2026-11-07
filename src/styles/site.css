@@ -80,14 +80,19 @@ h1, h2, h3, p { margin: 0; }
 .hdr { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: saturate(1.2) blur(10px); -webkit-backdrop-filter: saturate(1.2) blur(10px); border-bottom: 1px solid var(--line); }
 .hdr__in { display: flex; align-items: center; gap: var(--space-3); height: 64px; }
 @media (min-width: 768px) { .hdr__in { gap: var(--space-6); } }
-.brand { font-weight: 700; font-size: 18px; letter-spacing: -.01em; text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; }
-.brand__logo { width: 26px; height: 26px; flex: none; }
+.brand { text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; color: var(--ink); }
+.brand__logo { width: 46px; height: 40px; flex: none; }
+.brand__word { display: grid; justify-items: center; line-height: 1; }
+.brand__name { font-family: "Be Vietnam Pro", system-ui, sans-serif; font-style: italic; font-weight: 800; font-size: 21px; letter-spacing: -.02em; }
+.brand__code { background: linear-gradient(135deg, #ff9a1a, #ff4d00); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+.brand__studio { display: flex; align-items: center; gap: 6px; margin-top: 3px; font-family: "Be Vietnam Pro", system-ui, sans-serif; font-size: 8.5px; font-weight: 500; letter-spacing: .42em; padding-left: .42em; }
+.brand__studio::before, .brand__studio::after { content: ""; width: 14px; height: 2px; border-radius: 1px; background: #ff7a12; }
 .nav { display: none; gap: var(--space-6); margin-left: var(--space-4); }
 .nav a { color: var(--ink-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color .15s ease-out; }
 .nav a:hover { color: var(--ink); }
 .hdr__tools { margin-left: auto; display: flex; align-items: center; gap: var(--space-2); }
 @media (min-width: 768px) { .hdr__tools { gap: var(--space-3); } }
-@media (max-width: 419px) { .brand { font-size: 16px; gap: 6px; } .brand__logo { width: 22px; height: 22px; } .langs a { padding: 6px 7px; } }
+@media (max-width: 419px) { .brand { gap: 7px; } .brand__logo { width: 38px; height: 33px; } .brand__name { font-size: 18px; } .brand__studio::before, .brand__studio::after { width: 9px; } .langs a { padding: 6px 7px; } }
 .hdr__cta { display: none; }
 @media (min-width: 1180px) { .nav { display: flex; } .hdr .hdr__cta { display: inline-flex; } .hdr .hdr__burger { display: none; } }
 
@@ -473,5 +478,3 @@ html[lang="ja"] .ai-line b { font-family: var(--font-sans); letter-spacing: 0; f
 .flowchain li:nth-child(2) { border-color: var(--agent); }
 .flowchain__n { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--agent); }
 
-/* The logo's gap around the diamond takes the colour of whatever it sits on. */
-.ftr .brand__logo rect { stroke: var(--surface-sunken); }

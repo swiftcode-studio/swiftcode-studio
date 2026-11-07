@@ -12,7 +12,7 @@
 - **International**: +84 35 543 0828
 
 #### Email
-- **Business**: business@swiftcode-studio.com
+- **Business**: sales@swiftcode-studio.com
 - **General**: info@swiftcode-studio.com
 
 #### Địa chỉ

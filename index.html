@@ -1,20 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./logo-new.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swiftcode Studio - Building Connections Seamlessly</title>
+    <title>Swiftcode Studio — AIが開発し、人が承認する</title>
+    <meta name="description" content="Swiftcode Studioは、AIネイティブな開発プロセスでソフトウェアを構築するフリーランスのスタジオです。仕様・コード・テスト・リリースはAIが担い、各承認ゲートはお客様が判断。AIによるマンガ動画の編集にも対応しています。" />
+    <meta name="theme-color" content="#0f0e0c" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="https://swiftcode-studio.com/" />
+    <!--alternates-->
+    <link rel="alternate" hreflang="ja" href="https://swiftcode-studio.com/" />
+    <link rel="alternate" hreflang="en" href="https://swiftcode-studio.com/en" />
+    <link rel="alternate" hreflang="vi" href="https://swiftcode-studio.com/vi" />
+    <link rel="alternate" hreflang="x-default" href="https://swiftcode-studio.com/" />
+    <!--/alternates-->
 
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Swiftcode Studio" />
+    <meta property="og:url" content="https://swiftcode-studio.com/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="Swiftcode Studio — AIが開発し、人が承認する" />
+    <meta property="og:description" content="お客様はアイデアを伝えるだけ。仕様・コード・テスト・リリースはAIが担当し、各ゲートでお客様が承認します。" />
+    <meta property="og:image" content="https://swiftcode-studio.com/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Meta Tags -->
-    <meta name="description" content="Swiftcode Studio provides Custom API development, CRM integration, and SaaS solutions using the latest technology.">
-    <meta name="keywords" content="software development, offshore development, web development, mobile app development, React, Ruby on Rails">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Latin and Vietnamese webfonts, loaded without blocking the first paint. Japanese uses system fonts (see site.css). -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+
+    <script>
+      // Mark JS as available (enables reveal-on-scroll) and apply the saved theme before first paint. Dark is the default.
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('sc-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+
+    <!--jsonld-->
   </head>
-  <body>
+  <body data-page="home">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

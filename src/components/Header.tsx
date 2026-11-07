@@ -1,165 +1,67 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Button } from '../ds'
+import { LANG_LABEL, LANG_NAME, LANG_PATH, useDict, type Lang } from '../i18n'
+import { PAGE_PATH, sectionHref, usePage } from '../site'
+import { useTheme } from '../hooks/useTheme'
 
-interface HeaderProps {
-  isJapanese?: boolean;
-}
+export function Header() {
+  const d = useDict()
+  const page = usePage()
+  const { theme, toggle } = useTheme()
+  const [open, setOpen] = useState(false)
 
-export default function Header({ isJapanese = false }: HeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
 
-  const navItems = isJapanese ? [
-    { label: 'ホーム', href: '/ja' },
-    { label: '会社概要', href: '/ja/about' },
-    { label: 'サービス', href: '/ja/services' },
-    { label: '技術', href: '/ja/technologies' },
-    { label: 'お問い合わせ', href: '/ja/contact' },
-  ] : [
-    { label: 'Home', href: '/' },
-    { label: 'About us', href: '/about' },
-    { label: 'Services', href: '/services' },
-    { label: 'Technologies', href: '/technologies' },
-    { label: 'Contact us', href: '/contact' },
-  ];
-
-  const contactButtonText = isJapanese ? 'お問い合わせ' : 'Contact us!';
-
-  const languages = [
-    { code: 'en', label: 'English', flag: '🇬🇧', link: '/' },
-    { code: 'ja', label: '日本語', flag: '🇯🇵', link: '/ja' },
-  ];
-
-  const currentLanguage = isJapanese ? languages[1] : languages[0];
+  const links = [
+    [sectionHref(page, d.lang, 'process'), d.nav.process],
+    [page === 'manga' ? '#manga' : PAGE_PATH.manga[d.lang], d.nav.manga],
+    [sectionHref(page, d.lang, 'work'), d.nav.work],
+    [sectionHref(page, d.lang, 'about'), d.nav.about],
+    [sectionHref(page, d.lang, 'engage'), d.nav.engage],
+    ['#faq', d.nav.faq],
+  ] as const
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 w-full">
-      <div className="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
-        {/* Logo */}
-        <Link to={isJapanese ? '/ja' : '/'} className="flex items-center space-x-3">
-          <img src="/logo-new.svg" alt="Swiftcode Studio" className="h-10" />
-          <div>
-            <h1 className="text-2xl font-bold" style={{ color: '#FF6B35' }}>Swiftcode</h1>
-            <p className="text-sm text-gray-600">Studio</p>
-            <p className="text-xs text-gray-500">Code • Ship • Grow</p>
-          </div>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-8 items-center">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className="text-gray-600 hover:text-[#FF6B35] transition-colors font-medium"
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          {/* Language Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
-              className="flex items-center space-x-2 px-4 py-2 rounded-full border-2 border-gray-300 hover:border-[#FF6B35] transition-all bg-white shadow-sm hover:shadow-md"
-            >
-              <span className="text-2xl">{currentLanguage.flag}</span>
-              <i className={`fa-light fa-chevron-down text-xs text-gray-500 transition-transform ${languageDropdownOpen ? 'rotate-180' : ''}`}></i>
-            </button>
-
-            {/* Dropdown Menu */}
-            {languageDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-200 py-2 animate-fade-in z-50">
-                {languages.map((lang) => (
-                  <Link
-                    key={lang.code}
-                    to={lang.link}
-                    onClick={() => setLanguageDropdownOpen(false)}
-                    className={`flex items-center space-x-3 px-4 py-3 hover:bg-orange-50 transition-colors ${
-                      currentLanguage.code === lang.code ? 'bg-orange-50' : ''
-                    }`}
-                  >
-                    <span className="text-2xl">{lang.flag}</span>
-                    <span className={`font-medium ${
-                      currentLanguage.code === lang.code ? 'text-[#FF6B35]' : 'text-gray-700'
-                    }`}>
-                      {lang.label}
-                    </span>
-                    {currentLanguage.code === lang.code && (
-                      <i className="fa-light fa-check text-[#FF6B35] ml-auto"></i>
-                    )}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+    <header className="hdr">
+      <div className="wrap hdr__in">
+        <a className="brand" href={page === 'home' ? '#top' : LANG_PATH[d.lang]} aria-label={`Swiftcode Studio — ${d.nav.home}`}>
+          Swiftcode Studio<span className="brand__mark" aria-hidden="true">$_</span>
+        </a>
+        <nav className="nav" aria-label={d.nav.primaryAria}>
+          {links.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
         </nav>
-
-        {/* Contact Button */}
-        <Link
-          to={isJapanese ? '/ja/contact' : '/contact'}
-          className="hidden lg:block bg-[#19857B] text-white px-6 py-2 rounded-lg hover:bg-[#156B62] transition-colors font-semibold"
-        >
-          {contactButtonText}
-        </Link>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden text-gray-600 hover:text-[#FF6B35] p-2"
-        >
-          <i className={`fa-light ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 py-4 px-6 animate-fade-in">
-          <nav className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-600 hover:text-[#FF6B35] transition-colors font-medium"
-              >
-                {item.label}
+        <div className="hdr__tools">
+          <div className="langs" role="group" aria-label={d.nav.language}>
+            {(Object.keys(LANG_PATH) as Lang[]).map((l) => (
+              <Link key={l} to={PAGE_PATH[page][l]} hrefLang={l} lang={l} aria-current={l === d.lang ? 'true' : undefined} title={LANG_NAME[l]} preventScrollReset>
+                {LANG_LABEL[l]}
               </Link>
             ))}
-
-            {/* Mobile Language Selector */}
-            <div className="pt-2 border-t border-gray-200">
-              <p className="text-xs text-gray-500 mb-2 font-semibold uppercase">{isJapanese ? '言語' : 'Language'}</p>
-              <div className="grid grid-cols-2 gap-3">
-                {languages.map((lang) => (
-                  <Link
-                    key={lang.code}
-                    to={lang.link}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-center space-x-2 px-4 py-3 rounded-lg border-2 transition-all ${
-                      currentLanguage.code === lang.code
-                        ? 'border-[#FF6B35] bg-orange-50 text-[#FF6B35]'
-                        : 'border-gray-300 hover:border-[#FF6B35] text-gray-700'
-                    }`}
-                  >
-                    <span className="text-xl">{lang.flag}</span>
-                    <span className="font-medium text-sm">{lang.label}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <Link
-              to={isJapanese ? '/ja/contact' : '/contact'}
-              onClick={() => setMobileMenuOpen(false)}
-              className="bg-[#19857B] text-white px-6 py-2 rounded-lg hover:bg-[#156B62] transition-colors font-semibold text-center"
-            >
-              {contactButtonText}
-            </Link>
+          </div>
+          <button type="button" className="icon-btn" onClick={toggle} aria-label={theme === 'dark' ? d.nav.theme.toLight : d.nav.theme.toDark}>
+            {theme === 'dark' ? <Sun size={18} strokeWidth={1.5} /> : <Moon size={18} strokeWidth={1.5} />}
+          </button>
+          <Button variant="ghost" size="sm" href="#contact" className="hdr__cta">{d.nav.cta}</Button>
+          <button type="button" className="icon-btn hdr__burger" aria-expanded={open} aria-controls="drawer" aria-label={open ? d.nav.close : d.nav.menu} onClick={() => setOpen((o) => !o)}>
+            {open ? <X size={18} strokeWidth={1.5} /> : <Menu size={18} strokeWidth={1.5} />}
+          </button>
+        </div>
+      </div>
+      {open ? (
+        <div className="drawer" id="drawer">
+          <nav className="wrap" aria-label={d.nav.mobileAria}>
+            {links.map(([href, label]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}
+            <Button variant="ghost" href="#contact" onClick={() => setOpen(false)}>{d.nav.cta}</Button>
           </nav>
         </div>
-      )}
+      ) : null}
     </header>
-  );
+  )
 }
-

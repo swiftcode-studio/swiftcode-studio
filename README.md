@@ -52,8 +52,8 @@ Muốn đổi nơi nhận: đặt `VITE_CONTACT_ENDPOINT` (xem `.env.example`).
 
 ## Mục video manga
 
-Ảnh và clip trong `public/images/manga/` lấy từ tập 11月制作分No.4 đã giao (khách đồng ý cho dùng để giới thiệu).
-Ảnh công cụ có 3 bản `tool-*-{ja,en,vi}.webp`: chụp từ editor thật (`love-koi/work/editor.py`), cắt bỏ thanh menu,
-vài nhãn giao diện (Cảnh, đã xác nhận, Lưu, tay) được đổi sang ngôn ngữ của trang khi chụp — trang web có ghi chú điều này.
+Ảnh và clip trong `public/images/manga/` cắt từ video YouTube https://www.youtube.com/watch?v=gn8J0w0I1aI
+(clip: 247s–262s; `clip-poster`: 248s; `input-v3`: khung sạch ở 245.9s; `out-v3`: cùng khung, bong bóng tiếng Anh ghép bằng `love-koi/work/bubbles.py`; `cut-1/2/3`: 292s/456s/212s).
+Không còn dùng tài liệu của khách. `tool-v2-*.webp` là ảnh minh hoạ giao diện công cụ (HTML dựng từ cảnh video này, khung khuôn mặt là kết quả thật của `imgutils.detect_heads` như tool love-koi dùng), không phải ảnh chụp editor thật.
 Số liệu ở `src/i18n/*.ts > manga.card` và kết quả kiểm tra ở `src/i18n/shared.ts > MANGA_REVIEW` là số đo thật
 từ `review.py` của tool dựng video. Khi có tập mới tốt hơn, thay ảnh và số liệu cùng lúc.

@@ -23,7 +23,6 @@ export function Manga({ standalone = false }: { standalone?: boolean }) {
     io.observe(el)
     return () => io.disconnect()
   }, [])
-  const shotSrc = (k: 'compare' | 'speakers') => MANGA_IMG.shot(k, d.lang)
 
   return (
     <section className="section" id="manga" aria-labelledby="manga-title">
@@ -118,8 +117,8 @@ export function Manga({ standalone = false }: { standalone?: boolean }) {
             {m.shots.map((s) => (
               <Reveal key={s.src}>
                 <figure className="shot">
-                  <a href={shotSrc(s.src)} target="_blank" rel="noopener noreferrer">
-                    <img src={shotSrc(s.src)} alt={s.alt} width={1440} height={900} loading="lazy" />
+                  <a href={MANGA_IMG.shot(s.src, d.lang)} target="_blank" rel="noopener noreferrer">
+                    <img src={MANGA_IMG.shot(s.src, d.lang)} alt={s.alt} width={1440} height={900} loading="lazy" />
                   </a>
                   <figcaption>{s.caption}</figcaption>
                 </figure>

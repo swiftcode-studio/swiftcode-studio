@@ -23,11 +23,11 @@ export const WORK_BASE = {
 export type ShotLang = 'ja' | 'en' | 'vi'
 
 export const MANGA_IMG = {
-  input: '/images/manga/input-panel.webp',
-  output: '/images/manga/out-bubble.webp',
-  clip: '/images/manga/clip.mp4',
+  input: '/images/manga/input-v3.webp',
+  output: '/images/manga/out-v3.webp',
+  clip: '/images/manga/clip-v2.mp4',
   poster: '/images/manga/clip-poster.webp',
   cuts: ['/images/manga/cut-1.webp', '/images/manga/cut-2.webp', '/images/manga/cut-3.webp'] as const,
-  /** Tool screenshots, with the tool's interface labels shown in the page language. */
-  shot: (name: 'compare' | 'speakers', lang: ShotLang) => `/images/manga/tool-${name}-${lang}.webp`,
+  /** Illustrative tool screens (built from scenes of the same video), labels in the page language. */
+  shot: (name: 'compare' | 'speakers', lang: ShotLang) => `/images/manga/tool-v2-${name}-${lang}.webp`,
 }
